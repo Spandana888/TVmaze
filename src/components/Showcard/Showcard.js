@@ -14,7 +14,7 @@ const Showcard = ({ showdata }) => {
     <>
       <div className="card-container">
         <Card onClick={(e) => handleShow(e.target.value)}>
-          <Card.Img src={showdata.image.original} alt={showdata.name} />
+          <Card.Img src={showdata.image.original} alt={showdata.id} />
           <Card.Body><strong>{showdata.name}</strong></Card.Body>
         </Card>
       </div>
@@ -22,7 +22,7 @@ const Showcard = ({ showdata }) => {
         <div className="modal-container">
           <img
             src={showdata.image.original}
-            alt={showdata.name}
+            alt={showdata.id}
             className="modal-image"
           />
           <div className="modal-attribute">

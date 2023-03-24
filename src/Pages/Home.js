@@ -24,7 +24,7 @@ const Home = () => {
   }
 
   return (
-    <>
+    <section id="home">
       {show.map((list)=>{
         return(
             <Showcard key={list.data.id}
@@ -32,7 +32,7 @@ const Home = () => {
             />
         )
       })}
-    </>
+    </section>
   )
 }
 
