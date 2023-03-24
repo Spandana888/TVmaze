@@ -1,0 +1,57 @@
+.card-container{
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.card{
+    width:250px !important;
+    margin:1rem;
+}
+
+.card-img,
+.modal-image{
+    width:250px;
+    height:300px;
+}
+
+/* modal styling */
+
+.modal-container{
+    display: flex !important;
+    position: relative;
+}
+
+.modal-attribute{
+    margin-left: 2rem;
+}
+
+.modal-content{
+    padding: 2rem;
+    background: #2a2a2a !important;
+    color: #fff !important;
+}
+.modal-content p{
+    text-align: justify;
+}
+
+.modal-container svg{
+  position: absolute;
+  right:0;
+  top:0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+
+.attribute-list ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0 !important;
+}
+
+.attribute-list li{
+    padding:1rem 1rem 1rem 0;
+    width:15rem;
+}
