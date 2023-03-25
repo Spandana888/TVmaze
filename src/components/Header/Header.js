@@ -2,9 +2,9 @@ import React from 'react';
 import './Header.css';
 import { BiSearch } from "react-icons/bi";
 
-const Header = () => {
+const Header = ({ filterShow }) => {
   return (
-    <section id="header">
+    <>
       <h1>TVmaze</h1>
       <div className="header-container">
         <div className="search-container">
@@ -15,8 +15,8 @@ const Header = () => {
               aria-label="Search"
               id="search-text"
               name="search"
+              onChange={(e) => filterShow(e.target.value)}
             />
-            <BiSearch />
           </form>
         </div>
         <div className="filter-container">
@@ -40,16 +40,16 @@ const Header = () => {
         <div className="rating-container">
           <form>
             <select>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option>Rating 1</option>
+              <option>Rating 2</option>
+              <option>Rating 3</option>
+              <option>Rating 4</option>
+              <option>Rating 5</option>
             </select>
           </form>
         </div>
       </div>
-    </section>
+    </>
   );
 }
 

@@ -5,7 +5,7 @@
     top: 0;
     z-index: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .header-container{
@@ -13,3 +13,24 @@
     align-items: center;
 }
 
+.search-container input{
+    width:25rem;
+}
+
+.filter-container select,
+.search-container input,
+.rating-container select{
+    padding: 0.75rem;
+    background-color: #1d1d1d;
+    border:none;
+    color:#8d8787;
+    margin-right: 1rem;
+}
+
+.rating-container select,
+.filter-container select{
+    width:15rem;
+}
+.rating-container option{
+   padding:1rem !important;
+}

@@ -8,7 +8,7 @@ const Showcard = ({ showdata }) => {
    const [show, setShow] = useState(false);
 
    const handleShow = (e) => setShow(true);
-   const handleClose = () => setShow(false);
+   const handleClose = (e)=> setShow(false);
 
   return (
     <>
