@@ -41,8 +41,8 @@ const Header = ({ searchShow, filterGenre }) => {
         </div>
         <div className="filter-container">
           <select onChange={onFilterValueChanged} title="All" name="genre-filter">
-            {genreList.map((list, index) => {
-              return <option value={list} key={index}>{list}</option>;
+            {genreList.map((list) => {
+              return <option value={list} key={list}>{list}</option>;
             })}
           </select>
         </div>

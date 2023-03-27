@@ -7,7 +7,7 @@ import  './Home.css';
 const Home = () => {
   const [show, setShow] = useState([]);
   const [filtered, setFiltered] = useState('');
-
+ 
   useEffect(() => {
     getShows();
   }, []);
