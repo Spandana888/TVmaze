@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import './Showcard.css';
 import { Modal } from "react-bootstrap";
 import { GrClose } from "react-icons/gr";
+import { GiRoundStar } from "react-icons/gi"
 
 const Showcard = ({ showdata }) => {
    const [show, setShow] = useState(false);
@@ -15,7 +16,15 @@ const Showcard = ({ showdata }) => {
       <div className="card-container">
         <Card onClick={(e) => handleShow(e.target.value)}>
           <Card.Img src={showdata.image.original} alt={showdata.id} />
-          <Card.Body><strong>{showdata.name}</strong></Card.Body>
+          <Card.Body>
+            <span>
+              <strong>{showdata.name}</strong>
+            </span>
+            <span className='rating'>
+              <GiRoundStar />
+              <strong>{showdata.rating.average}</strong>
+            </span>
+          </Card.Body>
         </Card>
       </div>
       <Modal size="lg" show={show} onHide={handleClose}>
@@ -48,7 +57,7 @@ const Showcard = ({ showdata }) => {
                 </li>
                 <li>
                   <strong>Genres</strong>
-                  <p>{showdata.genres.join(', ')}</p>
+                  <p>{showdata.genres.join(", ")}</p>
                 </li>
                 <li>
                   <strong>Network</strong>

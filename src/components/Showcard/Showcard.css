@@ -1,6 +1,4 @@
-#home{
-  margin:2rem 0rem;
-}
+
 
 .card-container{
   display: inline-flex;
@@ -42,6 +40,7 @@
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
+  color: #8d8787;
 }
 
 
@@ -55,4 +54,63 @@
 .attribute-list li{
     padding:1rem 1rem 1rem 0;
     width:14rem;
+}
+
+.rating{
+    display: inline-flex;
+    align-items: center;
+}
+
+.card-body{
+    display: flex;
+    justify-content: space-between;
+}
+.card-body svg{
+    margin-right:0.25rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+   .modal-container{
+     display:block !important;
+     text-align: center;
+   }
+
+   .attribute-list li{
+     width:10rem;
+    padding: 1rem;
+   }
+
+   .modal-attribute{
+      margin-left:0;
+   }
+
+   .modal-attribute h2{
+     margin: 1rem;
+   }
+
+   .modal-dialog{
+    margin:1rem !important;
+   }
+
+   .modal-content{
+     padding: 1rem;
+   }
+
+   .card{
+    width: 160px !important;
+   }
+
+   .card-img{
+    height:200px;
+   }
+
+   .card-body{
+    padding: 0 !important;
+    display: block;
+   }
+   
+   .rating{
+     margin: 0.5rem 0;
+   }
 }

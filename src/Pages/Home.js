@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Showcard from '../components/Showcard/Showcard';
 import Header from '../components/Header/Header';
+import  './Home.css';
 
 const Home = () => {
   const [show, setShow] = useState([]);
+  const [filtered, setFiltered] = useState('');
 
   useEffect(() => {
     getShows();
@@ -15,8 +17,9 @@ const Home = () => {
     for (let i = 1; i <= 15; i++) {
       showArr.push(await getShowData(i));
     }
-    console.log(showArr);
     setShow(showArr);
+    setFiltered(showArr);
+    console.log(showArr);
   };
 
   const getShowData = async (id) => {
@@ -24,8 +27,8 @@ const Home = () => {
     return res;
   };
 
-  //filter functionality
-  const filterShow = (name) => {
+  //search functionality
+  const searchShow = (name) => {
     if(!name) return getShows();
 
     let showArray = [];
@@ -37,14 +40,33 @@ const Home = () => {
     setShow(showArray)
   }
 
+  //filter by genre
+
+     const filterGenre = (filterValue) =>{
+     var genreArray = filtered.filter((genreList)=>{
+       if(genreList.data.genres.includes(filterValue)){
+         return genreList
+       } else if (filterValue === "All"){
+          return filtered;
+       }
+     });
+     setShow(genreArray);
+  }
+
   return (
     <>
       <section id="header">
-        <Header filterShow= {filterShow} />
+        <Header searchShow= {searchShow}  filterGenre={filterGenre} />
       </section>
       <section id="home">
         {show.map((list) => {
-          return <Showcard key={list.data.id} showdata={list.data} />;
+          return (
+            <Showcard
+              key={list.data.id}
+              showdata={list.data}
+              filterGenre={filterGenre}
+            />
+          );
         })}
       </section>
     </>

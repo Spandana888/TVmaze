@@ -1,8 +1,28 @@
 import React from 'react';
 import './Header.css';
-import { BiSearch } from "react-icons/bi";
 
-const Header = ({ filterShow }) => {
+const Header = ({ searchShow, filterGenre }) => {
+  const genreList = [
+    "All",
+    "Action",
+    "Adventure",
+    "Drama",
+    "Crime",
+    "Fantasy",
+    "Horror",
+    "Mystery",
+    "Music",
+    "Romance",
+    "Science-Fiction",
+    "Supernatural",
+    "Thriller",
+  ];
+
+  const onFilterValueChanged = (e) => {
+    e.preventDefault();
+    filterGenre(e.target.value)
+  };
+
   return (
     <>
       <h1>TVmaze</h1>
@@ -15,42 +35,20 @@ const Header = ({ filterShow }) => {
               aria-label="Search"
               id="search-text"
               name="search"
-              onChange={(e) => filterShow(e.target.value)}
+              onChange={(e) => searchShow(e.target.value)}
             />
           </form>
         </div>
         <div className="filter-container">
-          <form>
-            <select>
-              <option>Action</option>
-              <option>Adventure</option>
-              <option>Drama</option>
-              <option>Crime</option>
-              <option>Fantasy</option>
-              <option>Horror</option>
-              <option>Mystery</option>
-              <option>Music</option>
-              <option>Romance</option>
-              <option>Science-Fiction</option>
-              <option>Supernatural</option>
-              <option>Thriller</option>
-            </select>
-          </form>
-        </div>
-        <div className="rating-container">
-          <form>
-            <select>
-              <option>Rating 1</option>
-              <option>Rating 2</option>
-              <option>Rating 3</option>
-              <option>Rating 4</option>
-              <option>Rating 5</option>
-            </select>
-          </form>
+          <select onChange={onFilterValueChanged} title="All" name="genre-filter">
+            {genreList.map((list, index) => {
+              return <option value={list} key={index}>{list}</option>;
+            })}
+          </select>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default Header
