@@ -25,10 +25,10 @@ const Header = ({ searchShow, filterGenre }) => {
 
   return (
     <>
-      <h1>TVmaze</h1>
+      <h1 data-testid="app-header">TVmaze</h1>
       <div className="header-container">
-        <div className="search-container">
-          <form>
+        <div className="search-container" data-testid="app-search">
+          <form role={"form"}>
             <input
               type="text"
               placeholder="Search"
@@ -40,9 +40,17 @@ const Header = ({ searchShow, filterGenre }) => {
           </form>
         </div>
         <div className="filter-container">
-          <select onChange={onFilterValueChanged} title="All" name="genre-filter">
+          <select
+            onChange={onFilterValueChanged}
+            title="All"
+            name="genre-filter"
+          >
             {genreList.map((list) => {
-              return <option value={list} key={list}>{list}</option>;
+              return (
+                <option value={list} key={list}>
+                  {list}
+                </option>
+              );
             })}
           </select>
         </div>

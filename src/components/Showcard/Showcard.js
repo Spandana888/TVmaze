@@ -20,7 +20,7 @@ const Showcard = ({ showdata }) => {
             <span>
               <strong>{showdata.name}</strong>
             </span>
-            <span className='rating'>
+            <span className="rating">
               <GiRoundStar />
               <strong>{showdata.rating.average}</strong>
             </span>

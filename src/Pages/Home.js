@@ -19,7 +19,6 @@ const Home = () => {
     }
     setShow(showArr);
     setFiltered(showArr);
-    console.log(showArr);
   };
 
   const getShowData = async (id) => {
@@ -44,11 +43,12 @@ const Home = () => {
 
      const filterGenre = (filterValue) =>{
      var genreArray = filtered.filter((genreList)=>{
-       if(genreList.data.genres.includes(filterValue)){
-         return genreList
-       } else if (filterValue === "All"){
-          return filtered;
-       }
+       if (genreList.data.genres.includes(filterValue)) {
+         return genreList;
+       } else if (filterValue === "All") {
+         return filtered;
+       } 
+      return genreArray;
      });
      setShow(genreArray);
   }
