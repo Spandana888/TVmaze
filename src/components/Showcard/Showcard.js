@@ -3,13 +3,17 @@ import Card from 'react-bootstrap/Card';
 import './Showcard.css';
 import { Modal } from "react-bootstrap";
 import { GrClose } from "react-icons/gr";
-import { GiRoundStar } from "react-icons/gi"
+import { GiRoundStar } from "react-icons/gi";
+import Rating from "@mui/material/Rating";
+import StarIcon from "@mui/icons-material/Star";
 
 const Showcard = ({ showdata }) => {
    const [show, setShow] = useState(false);
 
    const handleShow = (e) => setShow(true);
    const handleClose = (e)=> setShow(false);
+
+   const ratingValue = (showdata.rating.average / 2).toFixed(1);
 
   return (
     <>
@@ -22,7 +26,7 @@ const Showcard = ({ showdata }) => {
             </span>
             <span className="rating">
               <GiRoundStar />
-              <strong>{showdata.rating.average}</strong>
+              <strong>{(showdata.rating.average / 2).toFixed(1)}</strong>
             </span>
           </Card.Body>
         </Card>
@@ -36,7 +40,10 @@ const Showcard = ({ showdata }) => {
           />
           <div className="modal-attribute">
             <h2>{showdata.name}</h2>
-            <GrClose onClick={() => handleClose(true)} />
+            <GrClose
+              onClick={() => handleClose(true)}
+              className="modal-close"
+            />
             <div className="attribute-list">
               <ul>
                 <li>
@@ -45,7 +52,19 @@ const Showcard = ({ showdata }) => {
                 </li>
                 <li>
                   <strong>Rating</strong>
-                  <p>{showdata.rating.average}</p>
+                  <p>
+                    <Rating
+                      name="movie-rating"
+                      value={ratingValue}
+                      readOnly
+                      emptyIcon={
+                        <StarIcon
+                          style={{ opacity: 0.55 }}
+                          fontSize="inherit"
+                        />
+                      }
+                    />
+                  </p>
                 </li>
                 <li>
                   <strong>Language</strong>
