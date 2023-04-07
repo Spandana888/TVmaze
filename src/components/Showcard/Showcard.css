@@ -64,6 +64,7 @@
 }
 .card-body svg{
     margin-right:0.25rem;
+    color: #faaf00;
 }
 
 @media only screen and (max-width: 600px) {

@@ -13,7 +13,7 @@ const Showcard = ({ showdata }) => {
    const handleShow = (e) => setShow(true);
    const handleClose = (e)=> setShow(false);
 
-   const ratingValue = (showdata.rating.average / 2).toFixed(1);
+   const ratingValue = showdata.rating.average / 2;
 
   return (
     <>

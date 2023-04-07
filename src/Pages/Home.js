@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Showcard from '../components/Showcard/Showcard';
 import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+
 import  './Home.css';
 
 const Home = () => {
@@ -68,6 +70,9 @@ const Home = () => {
             />
           );
         })}
+      </section>
+      <section id="footer">
+        <Footer />
       </section>
     </>
   );
