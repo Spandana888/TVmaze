@@ -29,4 +29,8 @@ describe("Header", ()=>{
       expect(placeholder).toHaveAttribute("type", "text");
       expect(placeholder).toHaveAttribute("id", "search-text");
     });
+    test("Default option should be All", () => {
+      render(<Header />);
+      expect(screen.getByRole("option", { name: "All" }).selected).toBe(true);
+    });
 })

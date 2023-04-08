@@ -47,7 +47,7 @@ const Header = ({ searchShow, filterGenre }) => {
           >
             {genreList.map((list) => {
               return (
-                <option value={list} key={list}>
+                <option value={list} key={list} data-testid="option">
                   {list}
                 </option>
               );
