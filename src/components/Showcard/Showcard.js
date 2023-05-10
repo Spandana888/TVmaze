@@ -13,11 +13,9 @@ const Showcard = ({ showdata }) => {
    const handleShow = (e) => setShow(true);
    const handleClose = (e)=> setShow(false);
 
-   const ratingValue = showdata.rating.average / 2;
-
   return (
     <>
-      <div className="card-container">
+      <div className="card-container" data-testid="card">
         <Card onClick={(e) => handleShow(e.target.value)}>
           <Card.Img src={showdata.image.original} alt={showdata.id} />
           <Card.Body>
@@ -55,7 +53,7 @@ const Showcard = ({ showdata }) => {
                   <p>
                     <Rating
                       name="movie-rating"
-                      value={ratingValue}
+                      value={showdata.rating.average / 2}
                       readOnly
                       emptyIcon={
                         <StarIcon

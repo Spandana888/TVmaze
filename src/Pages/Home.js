@@ -57,8 +57,8 @@ const Home = () => {
 
   return (
     <>
-      <section id="header">
-        <Header searchShow= {searchShow}  filterGenre={filterGenre} />
+      <section id="header" data-testid="header-component">
+        <Header searchShow={searchShow} filterGenre={filterGenre} />
       </section>
       <section id="home">
         {show.map((list) => {
